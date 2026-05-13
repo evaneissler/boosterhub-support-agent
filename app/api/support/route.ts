@@ -1,5 +1,4 @@
 import { Index } from "@upstash/vector";
-import { createAnthropic } from "@ai-sdk/anthropic";
 import { streamText } from "ai";
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
@@ -10,7 +9,6 @@ const index = new Index({
   token: process.env.UPSTASH_VECTOR_REST_TOKEN!,
 });
 
-const anthropic = createAnthropic();
 
 // Rate limiter: 10 requests per IP per minute
 // Uses Upstash Redis — add UPSTASH_REDIS_REST_URL + TOKEN to env
@@ -126,10 +124,10 @@ Guidelines:
 
     // 9. Stream response via Vercel AI SDK
     const result = streamText({
-      model: anthropic("claude-haiku-4-5-20251001"),
-      system: systemPrompt,
-      messages: [{ role: "user", content: sanitizedQuestion }],
-      maxOutputTokens: 1024,
+        model: "anthropic/claude-haiku-4-5-20251001",
+        system: systemPrompt,
+        messages: [{ role: "user", content: sanitizedQuestion }],
+        maxOutputTokens: 1024,
     });
 
     return result.toTextStreamResponse({

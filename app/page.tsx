@@ -47,7 +47,10 @@ export default function SupportChat() {
     try {
       const res = await fetch("/api/support", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          "x-api-key": process.env.NEXT_PUBLIC_SUPPORT_API_KEY ?? ""
+        },
         body: JSON.stringify({ question }),
       });
 

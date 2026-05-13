@@ -10,9 +10,7 @@ const index = new Index({
   token: process.env.UPSTASH_VECTOR_REST_TOKEN!,
 });
 
-const anthropic = createAnthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-});
+const anthropic = createAnthropic();
 
 // Rate limiter: 10 requests per IP per minute
 // Uses Upstash Redis — add UPSTASH_REDIS_REST_URL + TOKEN to env

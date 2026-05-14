@@ -20,25 +20,12 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 6px;
   text-decoration: none;
 }
-.brandBooster {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 900;
-  font-style: italic;
-  font-size: 22px;
-  color: var(--bh-green);
-  letter-spacing: -0.5px;
-}
-.brandHub {
-  background: var(--bh-blue);
-  color: white;
-  font-weight: 900;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  padding: 5px 11px;
-  border-radius: 8px;
+.brandLogo {
+  height: 32px;
+  width: auto;
+  display: block;
 }
 .headerTitle {
   font-size: 14px;
@@ -128,19 +115,9 @@
   gap: 28px;
 }
 .emptyLogo {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: var(--bh-blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 900;
-  font-style: italic;
-  color: white;
-  font-size: 22px;
-  box-shadow: 0 8px 24px -6px rgba(37, 99, 235, 0.45);
+  height: 56px;
+  width: auto;
+  display: block;
 }
 .emptyHeadline {
   font-size: 32px;
@@ -350,14 +327,13 @@
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 720px) {
   .header { padding: 12px 14px; gap: 8px; }
-  .brandBooster { font-size: 19px; }
-  .brandHub { font-size: 12px; padding: 4px 9px; }
+  .brandLogo { height: 26px; }
   .headerTitle { display: none; }
   .headerLink { display: none; }
   .headerCta { padding: 7px 12px; font-size: 12.5px; }
   .messages { padding: 20px 14px 24px; gap: 14px; }
   .empty { padding: 6vh 16px 24px; gap: 22px; }
-  .emptyLogo { width: 56px; height: 56px; font-size: 20px; }
+  .emptyLogo { height: 44px; }
   .emptyHeadline { font-size: 26px; }
   .emptyBlurb { font-size: 14px; margin-top: -10px; }
   .suggestGrid { grid-template-columns: 1fr; gap: 8px; }

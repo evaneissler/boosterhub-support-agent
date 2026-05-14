@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
+import Image from "next/image";
 import s from "./Chat.module.css";
 
 interface Message {
@@ -93,8 +94,14 @@ export default function Chat() {
           rel="noopener noreferrer"
           aria-label="BoosterHub home"
         >
-          <span className={s.brandBooster}>Booster</span>
-          <span className={s.brandHub}>HUB</span>
+          <Image
+            src="/boosterhub_logo.jpg"
+            alt="BoosterHub"
+            width={768}
+            height={216}
+            priority
+            className={s.brandLogo}
+          />
         </a>
         <span className={s.headerTitle}>Support Assistant</span>
         <div className={s.headerSpacer} />
@@ -134,7 +141,14 @@ export default function Chat() {
       <div className={s.messagesScroll}>
         {!hasMessages ? (
           <div className={s.empty}>
-            <div className={s.emptyLogo}>BH</div>
+            <Image
+              src="/boosterhub_logo.jpg"
+              alt="BoosterHub"
+              width={768}
+              height={216}
+              priority
+              className={s.emptyLogo}
+            />
             <h1 className={s.emptyHeadline}>
               Hi! <span className={s.accent}>How can we help?</span>
             </h1>

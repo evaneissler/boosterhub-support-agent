@@ -1,11 +1,5 @@
-import Dashboard from "./components/Dashboard";
-import ChatWidget from "./components/ChatWidget";
+import Chat from "./components/Chat";
 
 export default function Page() {
-  return (
-    <>
-      <Dashboard />
-      <ChatWidget />
-    </>
-  );
+  return <Chat />;
 }
